@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --grid-color: rgba(0, 0, 0, 0.04);
+  --glow-color: rgba(59, 130, 246, 0.02);
+  
+  /* Contact Section Tokens - Light */
+  --card-bg: #ffffff;
+  --card-border: #d0d7de;
+  --header-border: #d0d7de;
+  --dot-green: #1a7f37;
+  --text-link: #0969da;
+  --text-muted: #656d76;
+  --input-bg: #f6f8fa;
+  --input-border: #d0d7de;
+  --input-text: #1a1a1a;
+  --input-placeholder: #b0b8c1;
+  --btn-bg: #1a1a1a;
+  --btn-hover: #2d2d2d;
+  --btn-border: #d0d7de;
+  --btn-text: #ffffff;
+  --error: #cf222e;
+  --success: #1a7f37;
+}
+
+.dark {
+  --background: #09090b;
+  --foreground: #fafafa;
+  --grid-color: rgba(255, 255, 255, 0.05);
+  --glow-color: rgba(59, 130, 246, 0.03);
+
+  /* Contact Section Tokens - Dark */
+  --card-bg: #161b22;
+  --card-border: #30363d;
+  --header-border: #21262d;
+  --dot-green: #3fb950;
+  --text-link: #79c0ff;
+  --text-muted: #8b949e;
+  --input-bg: #1c2128;
+  --input-border: #3d444d;
+  --input-text: #e6edf3;
+  --input-placeholder: #484f58;
+  --btn-bg: #21262d;
+  --btn-hover: #30363d;
+  --btn-border: #3d444d;
+  --btn-text: #e6edf3;
+  --error: #f85149;
+  --success: #3fb950;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Contact Section Theme Tokens */
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-header-border: var(--header-border);
+  --color-dot-green: var(--dot-green);
+  --color-text-link: var(--text-link);
+  --color-text-muted: var(--text-muted);
+  --color-input-bg: var(--input-bg);
+  --color-input-border: var(--input-border);
+  --color-input-text: var(--input-text);
+  --color-input-placeholder: var(--input-placeholder);
+  --color-btn-bg: var(--btn-bg);
+  --color-btn-hover: var(--btn-hover);
+  --color-btn-border: var(--btn-border);
+  --color-btn-text: var(--btn-text);
+  --color-error: var(--error);
+  --color-success: var(--success);
+}
+
+body {
+  font-family: var(--font-geist-sans);
+  background-color: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+/* Custom Grid Pattern - Precise 32px match with reference social */
+.grid-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: 
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(#000 60%, #0000 100%);
+  -webkit-mask-image: radial-gradient(#000 60%, #0000 100%);
+  pointer-events: none;
+}
+
+.grid-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Glow effects for corners - More diffused to match modern portfolios */
+.corner-glow {
+  position: fixed;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle at center, rgba(59, 130, 246, 0.05), transparent 70%);
+  filter: blur(80px);
+  border-radius: 50%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+
+.glow-top-left { top: -200px; left: -200px; }
+.glow-top-right { top: -200px; right: -200px; }
+.glow-bottom-left { bottom: -200px; left: -200px; }
+.glow-bottom-right { bottom: -200px; right: -200px; }
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
+}
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #1e293b;
+}
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
