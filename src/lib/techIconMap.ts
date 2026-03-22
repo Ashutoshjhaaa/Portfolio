@@ -36,7 +36,7 @@ export const techIconMap: Record<string, TechIconEntry> = {
   'nodejs':        { slug: 'nodedotjs',      label: 'Node.js' },
   'expressjs':     { slug: 'express',        label: 'Express.js',  monochrome: true },
   'python':        { slug: 'python',         label: 'Python' },
-  'java':          { slug: 'oracle',         label: 'Java' },
+  'java':          { slug: 'java',           label: 'Java' },
   'graphql':       { slug: 'graphql',        label: 'GraphQL' },
 
   // --- Database ---
