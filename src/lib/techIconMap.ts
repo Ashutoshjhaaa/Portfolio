@@ -36,7 +36,7 @@ export const techIconMap: Record<string, TechIconEntry> = {
   'nodejs':        { slug: 'nodedotjs',      label: 'Node.js' },
   'expressjs':     { slug: 'express',        label: 'Express.js',  monochrome: true },
   'python':        { slug: 'python',         label: 'Python' },
-  'java':          { slug: 'java',           label: 'Java' },
+  'java':          { slug: 'java',        label: 'Java' , fallbackUrl: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/java.svg' },
   'graphql':       { slug: 'graphql',        label: 'GraphQL' },
 
   // --- Database ---
@@ -62,11 +62,13 @@ export const techIconMap: Record<string, TechIconEntry> = {
   'clerk':         { slug: 'clerk',          label: 'Clerk',       monochrome: true },
   'stripe':        { slug: 'stripe',         label: 'Stripe' },
   'resend':        { slug: 'resend',         label: 'Resend',      monochrome: true },
+  'rozzerpay':       { slug: 'rozzerpay',         label: 'Rozzerpay',      monochrome: true, fallbackUrl: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/razorpay.svg' },
 
   // --- AI ---
   'googlegemini':  { slug: 'googlegemini',   label: 'Google Gemini' },
   'gemini':        { slug: 'googlegemini',   label: 'Google Gemini' },
   'openai':        { slug: 'openai',         label: 'OpenAI',      monochrome: true },
+  'neon':          { slug: 'neon',           label: 'Neon', monochrome: false, fallbackUrl: 'https://raw.githubusercontent.com/neon-database/logo/main/neon-mark-color.svg' },
 
   // --- Testing ---
   'jest':          { slug: 'jest',           label: 'Jest' },
@@ -76,6 +78,8 @@ export const techIconMap: Record<string, TechIconEntry> = {
   'postman':       { slug: 'postman',         label: 'Postman' },
   'github':        { slug: 'github',         label: 'GitHub',      monochrome: true },
   'git':           { slug: 'git',            label: 'Git' },
+  'vscode':        { slug: 'visualstudiocode', label: 'VS Code', fallbackUrl: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/visualstudiocode.svg' },
+
 };
 
 /**

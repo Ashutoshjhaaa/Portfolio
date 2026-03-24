@@ -50,6 +50,15 @@ export const portfolioData: PortfolioData = {
     { name: "Shadcn UI", category: "UI" },
     { name: "Convex", category: "Database" },
     { name: "Google Gemini", category: "AI" },
+    { name: "git", category: "Tools" },
+    { name: "github", category: "Tools" },
+    { name: "VS Code", category: "Tools" },
+    { name: "Google Gemini", category: "AI" },
+    { name: "Neon", category: "Database" },
+    { name: "Rozzerpay", category: "Tools" },
+    { name: "Stripe", category: "Tools" },
+    
+
   ],
   experience: [
     {
@@ -64,7 +73,7 @@ export const portfolioData: PortfolioData = {
       name: "Foodie-Frenzy: Food Ordering Platform",
       description: "A high-performance full-stack food commerce engine featuring real-time order tracking, secure payments, and a centralized admin interface for inventory control and analytics.",
       status: "Live",
-      techStack: ["React", "TypeScript", "Node.js", "Tailwind", "MongoDB", "Starpi"],
+      techStack: ["React", "TypeScript", "Node.js", "Tailwind", "MongoDB", "Stripe"],
       logo: "Foodi-Frenzy.png",
       color: "#fb7185",
       url: "https://foodie-frenzyy.vercel.app",
@@ -94,11 +103,11 @@ export const portfolioData: PortfolioData = {
     {
       name: "Imagify- Create Images with AI",
       description: "A passionate developer crafting beautiful websites and stunning AI-generated images — where creativity meets code and imagination has no limits.",
-      techStack: ["React", "Node.js", "Tailwind CSS", "Express.js", "MongoDB", "Razorpay", "Google Gemini"],
+      techStack: ["React", "Node.js", "Tailwind CSS", "Express.js", "MongoDB", "Rozzerpay", "Google Gemini"],
       status: "Live",
       logo: "/Imagify.svg",
       color: "grey",
-      url: "https://chatwithchatly.vercel.app",
+      url: "https://imagify-img.vercel.app",
       githubUrl: "https://github.com/Ashutoshjhaaa/Imagify",
     },
   ],
