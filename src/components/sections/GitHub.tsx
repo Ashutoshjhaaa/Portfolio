@@ -22,17 +22,32 @@ async function getPinnedRepos(): Promise<PinnedRepo[]> {
     if (!profileRes.ok) return [];
 
     const profileHtml = await profileRes.text();
+    
+    // Robust extraction: GitHub now uses <span class="repo">RepoName</span> for pinned items
     const repoNames: string[] = [];
-    const parts = profileHtml.split('class="repo">');
-
-    for (let i = 1; i < parts.length; i++) {
-      const name = parts[i].split('</span>')[0].trim();
-      if (name && !repoNames.includes(name)) {
-        repoNames.push(name);
+    const matches = profileHtml.matchAll(/<span[^>]*class="repo"[^>]*>\s*([^\s<]+)\s*<\/span>/g);
+    
+    for (const match of matches) {
+      if (!repoNames.includes(match[1])) {
+        repoNames.push(match[1]);
       }
     }
 
-    if (repoNames.length === 0) return [];
+    if (repoNames.length === 0) {
+      // Fallback: If no pins are found (or HTML changes), just fetch recent active repos
+      const fallbackRes = await fetchGitHubData(`https://api.github.com/users/${username}/repos?sort=pushed&per_page=3`);
+      if (Array.isArray(fallbackRes)) {
+        return fallbackRes.map((repo) => ({
+          name: repo.name,
+          description: repo.description,
+          language: repo.language || 'TypeScript',
+          stars: repo.stargazers_count,
+          forks: repo.forks_count,
+          url: repo.html_url
+        }));
+      }
+      return [];
+    }
 
     const repos = await Promise.all(
       repoNames.map(async (repoName) => {
@@ -105,15 +120,19 @@ export const GitHub = async () => {
                   </svg>
                 </div>
                 <span className="text-sm font-semibold text-gray-900 dark:text-zinc-100">
-                  {repos.length} {portfolioData.labels.pinned }
+                  {repos.length} {portfolioData.labels.pinned}
                 </span>
               </div>
             </div>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
-              {repos.slice(0, 3).map((repo, i) => (
-                <PinnedRepoCard key={i} repo={repo} />
-              ))}
-            </div>
+            {repos.length === 0 ? (
+              <p className="text-sm text-gray-500 dark:text-zinc-400">No pinned repositories found.</p>
+            ) : (
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
+                {repos.slice(0, 3).map((repo, i) => (
+                  <PinnedRepoCard key={i} repo={repo} />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

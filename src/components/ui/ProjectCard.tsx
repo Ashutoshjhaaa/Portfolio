@@ -1,25 +1,38 @@
 "use client";
 
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import { portfolioData } from '@/components/constants/data';
 import { Github, MoveUpRight, Code2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { TechIcon } from './TechIcon';
 import { Project } from '@/types';
+import { slugify } from '@/lib/slugify';
 
 interface ProjectCardProps {
   project: Project;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+  const router = useRouter();
+  const projectSlug = project.slug || slugify(project.name);
+
+  const handleCardClick = (e: React.MouseEvent) => {
+    // Prevent navigation if clicking on status or links
+    if ((e.target as HTMLElement).closest('a')) return;
+    router.push(`/project/${projectSlug}`);
+  };
+
   return (
-    <article className="group relative flex cursor-pointer w-full" style={{ opacity: 1, transform: 'none' }}>
-      <div className="relative flex w-full min-h-[180px] sm:min-h-[230px] flex-col rounded-2xl border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 p-4 hover:border-gray-300 dark:hover:border-zinc-500 hover:shadow-xl shadow-sm">
+    <div 
+      onClick={handleCardClick}
+      className="group relative flex cursor-pointer w-full"
+      style={{ opacity: 1, transform: 'none' }}
+    >
+      <article className="relative flex w-full min-h-[180px] sm:min-h-[230px] flex-col rounded-2xl border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 p-4 hover:border-gray-300 dark:hover:border-zinc-500 hover:shadow-xl shadow-sm">
         <div className="flex items-center justify-between mb-3">
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
+          <div
             className="w-6 h-6 text-xs bg-white dark:bg-zinc-700 overflow-hidden hover:opacity-80 transition-opacity"
           >
             {project.logo.length === 1 ? (
@@ -29,8 +42,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             ) : (
               <img alt={`${project.name} ${portfolioData.labels.projectIconAlt}`} className="w-full h-full object-contain p-0.5" src={project.logo} />
             )}
-          </a>
-          <div className="flex items-center gap-1.5">
+          </div>
+          <div className="flex items-center gap-1.5" onClick={(e) => e.stopPropagation()}>
             {project.githubUrl && (
               <a
                 href={project.githubUrl}
@@ -82,7 +95,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             ))}
           </div>
         </div>
-      </div>
-    </article>
+      </article>
+    </div>
   );
 };

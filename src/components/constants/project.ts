@@ -1,0 +1,201 @@
+import { ProjectDetails } from "@/types/project";
+
+export const PROJECTS: ProjectDetails[] = [
+  {
+    slug: "foodie-frenzy",
+    title: "Foodie-Frenzy",
+    subtitle: "Food Ordering Platform",
+    category: "Full Stack · Food Tech",
+    year: "2024",
+    role: "Full Stack Developer",
+    type: "Personal Project",
+    duration: "3 weeks",
+    status: "Live",
+    liveUrl: "https://foodie-frenzyy.vercel.app",
+    githubUrl: "https://github.com/Ashutoshjhaaa/Foodie-Frenzy",
+    coverImage: "/Foodtrack/hero.png",
+    screenshots: [
+      "/Foodtrack/menu.png",
+      "/Foodtrack/admin.png",
+      "/Foodtrack/addcart.png",
+
+
+    ],
+    logo: "/foodtrack/Foodi-Frenzy.png",
+    description:
+      "A high-performance full-stack food commerce engine featuring real-time order tracking, secure payments, and a centralized admin interface for inventory control and analytics.",
+    overview:
+      "Foodie-Frenzy is a full-featured food delivery platform built with the MERN stack. It handles the complete ordering lifecycle — from browsing menus and adding to cart, all the way through Stripe-powered checkout and real-time order status updates.\n\nThe platform ships two separate interfaces: a responsive customer-facing storefront in React and a dedicated admin dashboard for restaurant owners to manage inventory, track orders, and view revenue analytics.",
+    features: [
+      "JWT-based auth with protected routes and persistent sessions",
+      "Real-time order tracking with live status updates across admin & customer view",
+      "Stripe payment integration with webhook handling for order confirmation",
+      "Admin dashboard — add/remove menu items, manage orders, view revenue stats",
+      "Responsive mobile-first UI optimised for on-the-go ordering",
+      "Cart persistence across sessions using localStorage",
+      "Image upload for menu items via Cloudinary",
+    ],
+    challenge:
+      "Synchronising order state across customer and admin interfaces without full WebSocket infrastructure. Solved with intelligent polling intervals and optimistic UI updates — keeping the experience snappy without over-engineering.",
+    learned:
+      "This project cemented my understanding of full-stack architecture — specifically designing RESTful APIs that are clean for the frontend while efficient on the DB side. Stripe's webhook system introduced me to event-driven backend patterns.",
+    tech: ["React", "TypeScript", "Node.js", "MongoDB", "Express", "Stripe", "Tailwind CSS"],
+    techIcons: {
+      React: "https://cdn.simpleicons.org/react",
+      TypeScript: "https://cdn.simpleicons.org/typescript",
+      "Node.js": "https://cdn.simpleicons.org/nodedotjs",
+      MongoDB: "https://cdn.simpleicons.org/mongodb",
+      Express: "https://cdn.simpleicons.org/express",
+      Stripe: "https://cdn.simpleicons.org/stripe",
+      "Tailwind CSS": "https://cdn.simpleicons.org/tailwindcss",
+    },
+    db: "MongoDB",
+    deploy: "Vercel",
+    auth: "JWT + Bcrypt",
+  },
+  {
+    slug: "shortiq",
+    title: "ShortIQ",
+    subtitle: "AI Faceless Content Engine",
+    category: "AI · Content Automation",
+    year: "2024",
+    role: "Full Stack Developer",
+    type: "Personal Project",
+    duration: "4 weeks",
+    status: "Live",
+    liveUrl: "https://short-iq.vercel.app",
+    githubUrl: "https://github.com/Ashutoshjhaaa",
+    coverImage: "/shortiq/hero.png",
+    screenshots: [
+      "/shortiq/overview.png",
+    "  /shortiq/series.png",
+      "/shortiq/video.png",
+    ],
+    logo: "/shortiq/logo.svg",
+    description:
+      "An AI-powered automation platform that empowers creators to build and scale faceless content empires through seamless script generation, high-performance rendering, and direct social media publishing.",
+    overview:
+      "ShortIQ automates the entire faceless content creation pipeline — AI-powered script generation, automated video rendering, and direct publishing on social platforms. Creators produce content at scale without ever appearing on camera.\n\nBuilt on Next.js + PostgreSQL with async job queues powering each stage of the pipeline, the platform gives creators a full dashboard to schedule, manage and track their content.",
+    features: [
+      "AI script generation tailored to niche, tone and target audience",
+      "Automated video rendering with dynamic text overlays and background footage",
+      "Direct integration with social media publishing APIs",
+      "Content calendar and scheduling dashboard",
+      "Analytics to track video performance across platforms",
+      "Multiple TTS voice options for narration via ElevenLabs",
+    ],
+    challenge:
+      "Orchestrating the async pipeline: AI writes script → TTS converts to audio → renderer stitches video → upload to platform. Managing failure states at each step without losing user progress required careful job queue design with retry logic.",
+    learned:
+      "Building ShortIQ deepened my understanding of async job processing and AI API orchestration. Designing resilient pipelines where each step can fail independently without breaking the whole flow was the core engineering lesson.",
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS", "AI APIs"],
+    techIcons: {
+      "Next.js": "https://cdn.simpleicons.org/nextdotjs",
+      TypeScript: "https://cdn.simpleicons.org/typescript",
+      PostgreSQL: "https://cdn.simpleicons.org/postgresql",
+      "Tailwind CSS": "https://cdn.simpleicons.org/tailwindcss",
+    },
+    db: "PostgreSQL",
+    deploy: "Vercel",
+    auth: "NextAuth",
+  },
+  {
+    slug: "fit-track",
+    title: "Fit-Track",
+    subtitle: "Your Personal Fitness Companion",
+    category: "Health Tech · Full Stack",
+    year: "2024",
+    role: "Full Stack Developer",
+    type: "Personal Project",
+    duration: "3 weeks",
+    status: "Live",
+    liveUrl: "https://tryfittrack.vercel.app",
+    githubUrl: "https://github.com/Ashutoshjhaaa/Fit-track",
+    coverImage: "/Fit-track/hero.png",
+    screenshots: [
+      "/Fit-track/dashboard.png",
+    "  /Fit-track/food.png",
+      "/Fit-track/activity.png",
+
+    ],
+    logo: "/Fit-track/fit-track.svg",
+    description:
+      "A personal fitness tracking app that helps users set goals, monitor progress, and stay motivated with AI-powered nutritional insights and real-time activity tracking.",
+    overview:
+      "Fit-Track is a wellness platform for logging workouts, setting fitness goals, tracking caloric intake, and visualising progress over time. Built with React + TypeScript, Clerk authentication, and Neon (serverless PostgreSQL).\n\nThe AI nutritional insights engine is powered by Google Gemini, giving users personalised recommendations based on their activity data and dietary habits.",
+    features: [
+      "Clerk-based authentication with social login support (Google, GitHub)",
+      "Workout logging with sets, reps, weight and cardio tracking",
+      "Goal setting with visual progress indicators and streak tracking",
+      "AI-powered nutritional insights using Google Gemini API",
+      "Activity dashboard with weekly and monthly trend charts",
+      "Radix UI components for accessible, polished interactions",
+    ],
+    challenge:
+      "Designing a flexible data model for workout logging — users have wildly different workout types (cardio, weights, yoga) and the schema needed to be flexible without sacrificing analytics dashboard query performance.",
+    learned:
+      "Working with Neon (serverless PostgreSQL) taught me how to design relational schemas for flexible user-generated data. Integrating Clerk simplified auth significantly, letting me focus entirely on core product features.",
+    tech: ["React", "TypeScript", "Node.js", "Neon", "Clerk", "Radix UI", "Tailwind CSS"],
+    techIcons: {
+      React: "https://cdn.simpleicons.org/react",
+      TypeScript: "https://cdn.simpleicons.org/typescript",
+      "Node.js": "https://cdn.simpleicons.org/nodedotjs",
+      Neon: "https://raw.githubusercontent.com/neon-database/logo/main/neon-mark-color.svg",
+      Clerk: "https://cdn.simpleicons.org/clerk",
+      "Radix UI": "https://cdn.simpleicons.org/radixui",
+      "Tailwind CSS": "https://cdn.simpleicons.org/tailwindcss",
+    },
+    db: "Neon (PostgreSQL)",
+    deploy: "Vercel",
+    auth: "Clerk",
+  },
+  {
+    slug: "imagify",
+    title: "Imagify",
+    subtitle: "Create Images with AI",
+    category: "AI · SaaS · Image Gen",
+    year: "2024",
+    role: "Full Stack Developer",
+    type: "Personal Project",
+    duration: "2 weeks",
+    status: "Live",
+    liveUrl: "https://imagify-img.vercel.app",
+    githubUrl: "https://github.com/Ashutoshjhaaa",
+    coverImage: "/imagify/hero.png",
+    screenshots: [
+      "/imagify/generate-image.png",
+      "/imagify/generate.png",
+      "/imagify/work.png",
+    ],
+    logo: "/imagify/imagify.svg",
+    description:
+      "An AI-powered SaaS platform where users generate stunning images from text prompts, with a credit-based monetisation system and Razorpay payment integration.",
+    overview:
+      "Imagify is a complete AI image generation SaaS with a credit-based monetisation model. Users sign up, receive free credits, and can purchase more via Razorpay. Each prompt consumes a credit and calls the Google Gemini API to generate a high-quality image.\n\nThe full-stack MERN architecture handles authentication, payments, generation history, and a user-facing gallery to browse and re-download past creations.",
+    features: [
+      "Text-to-image generation powered by Google Gemini API",
+      "Credit-based system with free tier and paid top-ups",
+      "Razorpay integration for seamless Indian payment processing",
+      "JWT authentication with protected generation endpoints",
+      "Image history gallery — browse and re-download past generations",
+      "Smooth skeleton loading states during AI generation",
+    ],
+    challenge:
+      "Building the credit system required atomic transactions — deducting a credit and triggering the AI call had to be tightly coupled so users never lose credits on failed generations. Razorpay webhook verification for payment confirmation was the other key engineering challenge.",
+    learned:
+      "This project taught me how to build a complete SaaS monetisation flow from scratch. Understanding payment webhook verification and building idempotent credit systems were the most valuable engineering lessons from this build.",
+    tech: ["React", "Node.js", "Express", "MongoDB", "Razorpay", "Google Gemini", "Tailwind CSS"],
+    techIcons: {
+      React: "https://cdn.simpleicons.org/react",
+      "Node.js": "https://cdn.simpleicons.org/nodedotjs",
+      Express: "https://cdn.simpleicons.org/express",
+      MongoDB: "https://cdn.simpleicons.org/mongodb",
+      Razorpay: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/razorpay.svg",
+      "Google Gemini": "https://cdn.simpleicons.org/googlegemini",
+      "Tailwind CSS": "https://cdn.simpleicons.org/tailwindcss",
+    },
+    db: "MongoDB",
+    deploy: "Vercel",
+    auth: "JWT + Bcrypt",
+  },
+];

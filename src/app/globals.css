@@ -97,6 +97,50 @@ body {
   scrollbar-width: none;  /* Firefox */
 }
 
+/* Project Description Tokens */
+:root {
+  --pd-bg: #ffffff;
+  --pd-text: #1a1a1a;
+  --pd-text-muted: #666;
+  --pd-border: rgba(0,0,0,0.1);
+  --pd-card-bg: #ffffff;
+  --pd-nav-bg: rgba(255,255,255,0.85);
+  --pd-tab-active: #ffffff;
+  --pd-tab-inactive: #888;
+  --pd-btn-ghost-bg: transparent;
+  --pd-btn-ghost-border: rgba(0,0,0,0.1);
+  --pd-btn-ghost-text: #555;
+  --pd-btn-ghost-hover: #f0f0f0;
+  --pd-section-label: #999;
+  --pd-info-row-border: rgba(0,0,0,0.05);
+  --pd-scroll-thumb: #ddd;
+  --pd-btn-live-bg: rgba(0,0,0,0.03);
+  --pd-btn-live-border: rgba(0,0,0,0.1);
+  --pd-btn-live-text: #000000;
+  --pd-btn-live-hover: rgba(0,0,0,0.06);
+}
+
+.dark {
+  --pd-bg: #0a0a0a;
+  --pd-text: #e0e0e0;
+  --pd-text-muted: #888;
+  --pd-border: rgba(255,255,255,0.06);
+  --pd-card-bg: #0d0d0d;
+  --pd-nav-bg: rgba(10,10,10,0.9);
+  --pd-tab-active: #161616;
+  --pd-tab-inactive: #444;
+  --pd-btn-ghost-bg: transparent;
+  --pd-btn-ghost-border: rgba(255,255,255,0.09);
+  --pd-btn-ghost-text: #777;
+  --pd-btn-ghost-hover: #141414;
+  --pd-section-label: #333;
+  --pd-info-row-border: rgba(255,255,255,0.04);
+  --pd-scroll-thumb: #222;
+  --pd-btn-live-bg: rgba(255,255,255,0.03);
+  --pd-btn-live-border: rgba(255,255,255,0.1);
+  --pd-btn-live-text: #ffffff;
+  --pd-btn-live-hover: rgba(255,255,255,0.06);
+}
 
 /* Custom Grid Pattern - Precise 32px match with reference social */
 .grid-background {
