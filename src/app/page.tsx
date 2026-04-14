@@ -1,6 +1,7 @@
 import { Sidebar } from "@/components/layout/Sidebar";
 import { Projects } from "@/components/sections/Projects";
 import { GitHub } from "@/components/sections/GitHub";
+import { InterviewCard } from "@/components/ui/InterviewCard";
 import ContactSection from "@/components/sections/ContactSection";
 import { Footer } from "@/components/layout/Footer";
 
@@ -14,6 +15,7 @@ export default function Home() {
         <main className="flex-1 p-4 lg:p-6 lg:pl-0 space-y-8">
           <Projects />
           <GitHub />
+          <InterviewCard />
           <ContactSection />
           <Footer />
         </main>
