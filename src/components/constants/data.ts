@@ -117,12 +117,12 @@ export const portfolioData: PortfolioData = {
   ],
   githubStats: {
     username: "ashutoshjhaaa",
-    totalContributions: 1586,
+    totalContributions: 83, // Real value from https://github-contributions-api.deno.dev/ashutoshjhaaa.json
   },
   apiUrls: {
     githubProfile: "https://github.com",
     githubRepo: "https://api.github.com/repos",
-    githubContributions: "https://github-contributions-api.deno.dev",
+    githubContributions: "https://github-contributions-api.deno.dev/ashutoshjhaaa",
   },
 
   contact: {

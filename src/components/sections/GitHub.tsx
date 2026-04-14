@@ -7,7 +7,7 @@ import { PinnedRepo } from '@/types';
 
 async function fetchGitHubData(url: string) {
   try {
-    const res = await fetch(url);
+    const res = await fetch(url, { cache: 'no-store' });
     if (!res.ok) return null;
     return await res.json();
   } catch (err) {
@@ -15,10 +15,18 @@ async function fetchGitHubData(url: string) {
   }
 }
 
+// The deno contributions API returns { contributions: Day[][], totalContributions: number }
+// Sum all counts from the nested array as a reliable fallback
+function sumContributions(contributions: { contributionCount: number }[][]): number {
+  return contributions.reduce((total, week) =>
+    total + week.reduce((wk, day) => wk + day.contributionCount, 0)
+  , 0);
+}
+
 async function getPinnedRepos(): Promise<PinnedRepo[]> {
   try {
     const username = portfolioData.githubStats.username;
-    const profileRes = await fetch(`https://github.com/${username}`);
+    const profileRes = await fetch(`https://github.com/${username}`, { cache: 'no-store' });
     if (!profileRes.ok) return [];
 
     const profileHtml = await profileRes.text();
@@ -35,7 +43,7 @@ async function getPinnedRepos(): Promise<PinnedRepo[]> {
 
     if (repoNames.length === 0) {
       // Fallback: If no pins are found (or HTML changes), just fetch recent active repos
-      const fallbackRes = await fetchGitHubData(`https://api.github.com/users/${username}/repos?sort=pushed&per_page=3`);
+      const fallbackRes = await fetchGitHubData(`https://api.github.com/users/${username}/repos?sort=pushed&per_page=3&_=${Date.now()}`);
       if (Array.isArray(fallbackRes)) {
         return fallbackRes.map((repo) => ({
           name: repo.name,
@@ -78,7 +86,13 @@ export const GitHub = async () => {
 
   const username = portfolioData.githubStats.username;
   const repos = liveRepos.length > 0 ? liveRepos : portfolioData.pinnedRepositories;
-  const totalContributions = contributionsData?.totalContributions || portfolioData.githubStats.totalContributions;
+
+  // Prefer the live totalContributions from API; fall back to summing the array; last resort: static data
+  const totalContributions =
+    contributionsData?.totalContributions ??
+    (Array.isArray(contributionsData?.contributions)
+      ? sumContributions(contributionsData.contributions)
+      : portfolioData.githubStats.totalContributions);
 
   return (
     <section className="rounded-3xl p-4 sm:p-8 border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 shadow-xl overflow-hidden">
