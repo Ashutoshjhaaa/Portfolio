@@ -167,7 +167,7 @@ export const PROJECTS: ProjectDetails[] = [
       "/imagify/generate.png",
       "/imagify/work.png",
     ],
-    logo: "/imagify/imagify.svg",
+    logo: "/imagify/Imagify.svg",
     description:
       "An AI-powered SaaS platform where users generate stunning images from text prompts, with a credit-based monetisation system and Razorpay payment integration.",
     overview:
