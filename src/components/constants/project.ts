@@ -13,11 +13,11 @@ export const PROJECTS: ProjectDetails[] = [
     status: "Live",
     liveUrl: "https://foodie-frenzyy.vercel.app",
     githubUrl: "https://github.com/Ashutoshjhaaa/Foodie-Frenzy",
-    coverImage: "/Foodtrack/hero.png",
+    coverImage: "/foodtrack/hero.png",
     screenshots: [
-      "/Foodtrack/menu.png",
-      "/Foodtrack/admin.png",
-      "/Foodtrack/addcart.png",
+      "/foodtrack/menu.png",
+      "/foodtrack/admin.png",
+      "/foodtrack/addcart.png",
 
 
     ],
@@ -68,7 +68,7 @@ export const PROJECTS: ProjectDetails[] = [
     coverImage: "/shortiq/hero.png",
     screenshots: [
       "/shortiq/overview.png",
-    "  /shortiq/series.png",
+      "/shortiq/series.png",
       "/shortiq/video.png",
     ],
     logo: "/shortiq/logo.svg",
@@ -114,7 +114,7 @@ export const PROJECTS: ProjectDetails[] = [
     coverImage: "/Fit-track/hero.png",
     screenshots: [
       "/Fit-track/dashboard.png",
-    "  /Fit-track/food.png",
+      "/Fit-track/food.png",
       "/Fit-track/activity.png",
 
     ],
@@ -167,7 +167,7 @@ export const PROJECTS: ProjectDetails[] = [
       "/imagify/generate.png",
       "/imagify/work.png",
     ],
-    logo: "/imagify/imagify.svg",
+    logo: "/imagify/Imagify.svg",
     description:
       "An AI-powered SaaS platform where users generate stunning images from text prompts, with a credit-based monetisation system and Razorpay payment integration.",
     overview:
