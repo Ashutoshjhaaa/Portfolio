@@ -76,7 +76,7 @@ export const GitHubCalendarWrapper = ({ username }: Props) => {
     >
       {/* Mobile: horizontal scroll */}
       <div className="block md:hidden overflow-x-auto scrollbar-hide">
-        <div className="min-w-[600px]">
+        <div className="min-w-150">
           {mounted && (
             <GitHubCalendar
               username={username}

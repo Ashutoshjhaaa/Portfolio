@@ -13,11 +13,11 @@ export const PROJECTS: ProjectDetails[] = [
     status: "Live",
     liveUrl: "https://foodie-frenzyy.vercel.app",
     githubUrl: "https://github.com/Ashutoshjhaaa/Foodie-Frenzy",
-    coverImage: "/Foodtrack/hero.png",
+    coverImage: "/foodtrack/hero.png",
     screenshots: [
-      "/Foodtrack/menu.png",
-      "/Foodtrack/admin.png",
-      "/Foodtrack/addcart.png",
+      "/foodtrack/menu.png",
+      "/foodtrack/admin.png",
+      "/foodtrack/addcart.png",
 
 
     ],
