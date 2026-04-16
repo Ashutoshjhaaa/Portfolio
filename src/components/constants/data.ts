@@ -109,7 +109,7 @@ export const portfolioData: PortfolioData = {
       description: "A passionate developer crafting beautiful websites and stunning AI-generated images — where creativity meets code and imagination has no limits.",
       techStack: ["React", "Node.js", "Tailwind CSS", "Express.js", "MongoDB", "Rozzerpay", "Google Gemini"],
       status: "Live",
-      logo: "/imagify/Imagify.svg",
+      logo: "/imagify/imagify.svg",
       color: "grey",
       url: "https://imagify-img.vercel.app",
       githubUrl: "https://github.com/Ashutoshjhaaa/Imagify",
