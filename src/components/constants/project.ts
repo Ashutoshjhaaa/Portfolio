@@ -63,7 +63,7 @@ export const PROJECTS: ProjectDetails[] = [
     type: "Personal Project",
     duration: "4 weeks",
     status: "Live",
-    liveUrl: "https://short-iq.vercel.app",
+    liveUrl: "https://short-iq-two.vercel.app",
     githubUrl: "https://github.com/Ashutoshjhaaa",
     coverImage: "/shortiq/hero.png",
     screenshots: [

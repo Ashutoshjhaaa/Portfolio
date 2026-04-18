@@ -31,6 +31,7 @@ export const metadata: Metadata = {
 
 
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 
 export default function RootLayout({
   children,
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body className="antialiased selection:bg-blue-100 selection:text-blue-900 dark:selection:bg-blue-900 dark:selection:text-blue-100 bg-background text-foreground">
         <ThemeProvider>
           <Background />
+          <ScrollToTop />
           <div className="max-w-[1440px] mx-auto min-h-screen">
             {children}
           </div>

@@ -88,7 +88,7 @@ export const portfolioData: PortfolioData = {
       techStack: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind"],
       logo: "/shortiq/logo.svg",
       color: "#fb7185",
-      url: "https://short-iq.vercel.app",
+      url: "https://short-iq-two.vercel.app",
       githubUrl: "https://github.com/Ashutoshjhaaa/ShortIQ",
     },
 
