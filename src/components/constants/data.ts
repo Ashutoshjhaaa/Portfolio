@@ -11,7 +11,7 @@ export const portfolioData: PortfolioData = {
   },
   name: "Ashutosh Jha",
   role: "Full stack developer / Javascript is <3",
-  bio: "I build robust, scalable applications with a focus on user experience and performance.",
+  bio: "Hey there! 👋 I'm Ashutosh, a **Full Stack Developer** specializing in **Next.js, Node.js,** and **PostgreSQL**. I build high-performance products like **Foodie-Frenzy** and **ShortIQ**, always focused on shipping fast, clean, and professional code.",
   profilePic: "https://github.com/Ashutoshjhaaa.png",
   email: "ashujha707070@gmail.com",
   cvUrl: "/Ashutoshjha reasume.pdf",

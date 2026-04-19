@@ -15,7 +15,7 @@ export default function Home() {
         <Sidebar />
       </div>
       <div className="lg:col-span-7 xl:col-span-8">
-        <main className="flex-1 p-4 lg:p-6 lg:pl-0 space-y-8">
+        <main className="flex-1 p-4 lg:p-6 lg:pl-0 space-y-8 mt-12 lg:mt-[120px]">
           <Projects />
           <GitHub />
           <InterviewCard />
