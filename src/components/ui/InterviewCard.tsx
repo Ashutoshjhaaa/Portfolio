@@ -28,7 +28,7 @@ export const InterviewCard = () => (
     initial="hidden"
     whileInView="visible"
     viewport={VIEWPORT_CONFIG}
-    className="rounded-3xl p-4 sm:p-8 border border-card-border bg-card-bg shadow-xl overflow-hidden mt-8"
+    className="rounded-3xl p-4 sm:p-8 border border-gray-200 dark:border-zinc-800 bg-white dark:bg-black shadow-xl overflow-hidden mt-8"
   >
     <div className="flex items-center gap-2 mb-6">
       <div className="p-1.5 rounded-lg bg-input-bg border border-input-border">

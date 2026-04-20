@@ -44,7 +44,7 @@ export const Hero = () => {
         {/* Location & Time Status */}
         <div className="flex flex-col items-end text-right shrink-0">
           <div className="flex items-center gap-1 whitespace-nowrap">
-            <Locate className="w-[14px] h-[14px] text-[#4b5563]" />
+            <Locate className="w-3.5 h-3.5 text-[#4b5563]" />
             <span className="text-[13px] sm:text-[14px] font-semibold text-[#374151] dark:text-zinc-300">New Delhi, IN</span>
           </div>
           <div className="text-[12px] sm:text-[13px] text-[#4b5563] dark:text-zinc-400 mt-0.5 font-bold tabular-nums whitespace-nowrap">

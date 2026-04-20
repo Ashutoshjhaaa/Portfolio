@@ -39,7 +39,7 @@ export const ScrollToTop = () => {
       onClick={scrollToTop}
       className={cn(
         "fixed bottom-8 right-8 z-50 flex items-center justify-center rounded-full",
-        "bg-background/80 backdrop-blur-md shadow-lg border border-border/50 hover:bg-muted/50 transition-colors",
+        "bg-black dark:bg-white shadow-lg transition-colors hover:opacity-90",
         !isVisible && "pointer-events-none"
       )}
       aria-label="Scroll to top"
@@ -53,20 +53,20 @@ export const ScrollToTop = () => {
             cx="50"
             cy="50"
             r="44"
-            className="stroke-muted/30 fill-none stroke-[6px]"
+            className="stroke-white/30 dark:stroke-black/30 fill-none stroke-[6px]"
           />
           <motion.circle
             cx="50"
             cy="50"
             r="44"
-            className="stroke-foreground fill-none stroke-[6px]"
+            className="stroke-white dark:stroke-black fill-none stroke-[6px]"
             style={{
               pathLength,
               strokeLinecap: "round",
             }}
           />
         </svg>
-        <ArrowUp className="w-5 h-5 text-foreground relative z-10" />
+        <ArrowUp className="w-5 h-5 text-white dark:text-black relative z-10" />
       </div>
     </motion.button>
   );

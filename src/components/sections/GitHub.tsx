@@ -95,7 +95,7 @@ export const GitHub = async () => {
       : portfolioData.githubStats.totalContributions);
 
   return (
-    <section className="rounded-3xl p-4 sm:p-8 border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 shadow-xl overflow-hidden">
+    <section className="rounded-3xl p-4 sm:p-8 border border-gray-200 dark:border-zinc-800 bg-white dark:bg-black shadow-xl overflow-hidden">
       <SectionHeader title={portfolioData.titles.github} subtitle={portfolioData.titles.githubSubtitle} />
 
       <div className="space-y-6">
@@ -125,7 +125,7 @@ export const GitHub = async () => {
         </div>
 
         <div>
-          <div className="rounded-2xl border p-4 sm:p-5 border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800/60">
+          <div className="rounded-2xl border p-4 sm:p-5 border-gray-200 dark:border-zinc-700 bg-white dark:bg-black">
             <div className="mb-4 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <div className="rounded bg-gray-100 dark:bg-zinc-700 p-1">

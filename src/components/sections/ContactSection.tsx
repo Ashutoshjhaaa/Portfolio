@@ -81,9 +81,9 @@ export default function ContactSection() {
 
   return (
     <div className="w-full">
-      <div className="rounded-3xl p-4 sm:p-8 border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 shadow-xl overflow-hidden">
+      <div className="rounded-3xl p-4 sm:p-8 border border-gray-200 dark:border-zinc-800 bg-white dark:bg-black shadow-xl overflow-hidden">
         {/* Card Header */}
-        <div className="flex items-center gap-2 mb-5 pb-[18px] border-b border-header-border">
+        <div className="flex items-center gap-2 mb-5 pb-4.5 border-b border-header-border">
           <div className="w-2.5 h-2.5 rounded-full bg-dot-green" />
           <p className="text-sm font-semibold text-gray-900 dark:text-zinc-100">
             <span className="text-text-link">{portfolioData.name.split(' ')[0].toLowerCase()}</span>
@@ -97,7 +97,7 @@ export default function ContactSection() {
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
             <div>
-              <label htmlFor="name" className="block text-[13px] font-semibold text-gray-900 dark:text-zinc-100 mb-[7px]">
+              <label htmlFor="name" className="block text-[13px] font-semibold text-gray-900 dark:text-zinc-100 mb-1.75">
                 {portfolioData.contact.nameLabel}<span className="text-error">*</span>
               </label>
               <input
@@ -107,13 +107,13 @@ export default function ContactSection() {
                 value={form.name}
                 onChange={handleChange}
                 placeholder={portfolioData.contact.namePlaceholder}
-                className={`w-full rounded-lg px-[14px] py-[11px] text-[15px] font-sans bg-input-bg border ${
+                className={`w-full rounded-lg px-3.5 py-2.75 text-[15px] font-sans bg-input-bg border ${
                   errors.name ? 'border-error' : 'border-input-border'
                 } text-input-text placeholder:text-input-placeholder outline-none focus:border-text-link focus:ring-2 focus:ring-text-link/10`}
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-[13px] font-semibold text-gray-900 dark:text-zinc-100 mb-[7px]">
+              <label htmlFor="email" className="block text-[13px] font-semibold text-gray-900 dark:text-zinc-100 mb-1.75">
                 {portfolioData.contact.emailLabel}<span className="text-error">*</span>
               </label>
               <input
@@ -123,7 +123,7 @@ export default function ContactSection() {
                 value={form.email}
                 onChange={handleChange}
                 placeholder={portfolioData.contact.emailPlaceholder}
-                className={`w-full rounded-lg px-[14px] py-[11px] text-[15px] font-sans bg-input-bg border ${
+                className={`w-full rounded-lg px-3.5 py-2.75 text-[15px] font-sans bg-input-bg border ${
                   errors.email ? 'border-error' : 'border-input-border'
                 } text-input-text placeholder:text-input-placeholder outline-none focus:border-text-link focus:ring-2 focus:ring-text-link/10`}
               />
@@ -131,7 +131,7 @@ export default function ContactSection() {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="subject" className="block text-[13px] font-semibold text-gray-900 dark:text-zinc-100 mb-[7px]">
+            <label htmlFor="subject" className="block text-[13px] font-semibold text-gray-900 dark:text-zinc-100 mb-1.75">
               {portfolioData.contact.subjectLabel}
             </label>
             <input
@@ -141,12 +141,12 @@ export default function ContactSection() {
               value={form.subject}
               onChange={handleChange}
               placeholder={portfolioData.contact.subjectPlaceholder}
-              className="w-full rounded-lg px-[14px] py-[11px] text-[15px] font-sans bg-input-bg border border-input-border text-input-text placeholder:text-input-placeholder outline-none focus:border-text-link focus:ring-2 focus:ring-text-link/10"
+              className="w-full rounded-lg px-3.5 py-2.75 text-[15px] font-sans bg-input-bg border border-input-border text-input-text placeholder:text-input-placeholder outline-none focus:border-text-link focus:ring-2 focus:ring-text-link/10"
             />
           </div>
 
           <div className="mb-4">
-            <label htmlFor="message" className="block text-[13px] font-semibold text-gray-900 dark:text-zinc-100 mb-[7px]">
+            <label htmlFor="message" className="block text-[13px] font-semibold text-gray-900 dark:text-zinc-100 mb-1.75">
               {portfolioData.contact.messageLabel}<span className="text-error">*</span>
             </label>
             <textarea
@@ -156,7 +156,7 @@ export default function ContactSection() {
               onChange={handleChange}
               rows={5}
               placeholder={portfolioData.contact.messagePlaceholder}
-              className={`w-full rounded-lg px-[14px] py-[11px] text-[15px] font-sans bg-input-bg border ${
+              className={`w-full rounded-lg px-3.5 py-2.75 text-[15px] font-sans bg-input-bg border ${
                 errors.message ? 'border-error' : 'border-input-border'
               } text-input-text placeholder:text-input-placeholder outline-none focus:border-text-link focus:ring-2 focus:ring-text-link/10 resize-none`}
             />
@@ -166,7 +166,7 @@ export default function ContactSection() {
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="w-full flex items-center justify-center gap-2 rounded-lg py-[13px] mt-1 text-sm font-semibold tracking-wide bg-btn-bg text-btn-text border border-btn-border hover:bg-btn-hover disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full flex items-center justify-center gap-2 rounded-lg py-3.25 mt-1 text-sm font-semibold tracking-wide bg-btn-bg text-btn-text border border-btn-border hover:bg-btn-hover disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="22" y1="2" x2="11" y2="13" />
@@ -175,7 +175,7 @@ export default function ContactSection() {
               <span>{status === 'sending' ? portfolioData.contact.buttonSending : portfolioData.contact.buttonIdle}</span>
             </button>
           ) : (
-            <div className="w-full flex items-center justify-center gap-2 mt-1 rounded-lg py-[13px] border border-header-border text-[13px] font-medium bg-green-500/10 dark:bg-green-500/20 text-green-700 dark:text-green-400">
+            <div className="w-full flex items-center justify-center gap-2 mt-1 rounded-lg py-3.25 border border-header-border text-[13px] font-medium bg-green-500/10 dark:bg-green-500/20 text-green-700 dark:text-green-400">
               <span>{portfolioData.contact.successMessage}</span>
               <span className="text-text-muted text-[12px]">
                 // {portfolioData.name} {portfolioData.contact.replyWaitTime}
@@ -184,7 +184,7 @@ export default function ContactSection() {
           )}
         </form>
 
-        <hr className="border-t border-header-border my-[22px]" />
+        <hr className="border-t border-header-border my-5.5" />
 
         {/* Dynamic Social Buttons sourced from portfolioData */}
         <div className="flex flex-row gap-2 flex-wrap">
