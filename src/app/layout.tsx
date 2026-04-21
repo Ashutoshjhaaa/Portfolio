@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from 'next/font/google';
+import { Inter, Outfit } from 'next/font/google';
 import "./globals.css";
 import { Background } from "@/components/layout/Background";
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
+});
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  variable: '--font-outfit',
 });
 
 import { portfolioData } from "@/components/constants/data";
@@ -43,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} font-sans`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${outfit.variable} font-sans`} suppressHydrationWarning>
       <body className="antialiased selection:bg-blue-100 selection:text-blue-900 dark:selection:bg-blue-900 dark:selection:text-blue-100 bg-background text-foreground font-sans">
         <ThemeProvider>
           <Background />
