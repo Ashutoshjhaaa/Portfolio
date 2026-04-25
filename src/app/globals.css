@@ -55,7 +55,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-sans: var(--font-bricolage);
   --font-outfit: var(--font-outfit), sans-serif;
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
@@ -79,7 +79,7 @@
 }
 
 body {
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-bricolage), system-ui, sans-serif;
   background-color: var(--background);
   color: var(--foreground);
   min-height: 100vh;
@@ -143,47 +143,9 @@ body {
   --pd-btn-live-hover: rgba(255,255,255,0.06);
 }
 
-/* Custom Grid Pattern - Precise 32px match with reference social */
-.grid-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-image:
-    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
-  background-size: 32px 32px;
-  mask-image: radial-gradient(circle at 0% 0%, black 20%, transparent 70%);
-  -webkit-mask-image: radial-gradient(circle at 0% 0%, black 20%, transparent 70%);
-  pointer-events: none;
-}
-
-.grid-background::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-/* Glow effects for corners - More diffused to match modern portfolios */
-.corner-glow {
-  position: fixed;
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle at center, rgba(59, 130, 246, 0.05), transparent 70%);
-  filter: blur(80px);
-  border-radius: 50%;
-  z-index: -1;
-  pointer-events: none;
-}
-
-
-.glow-top-left { top: -200px; left: -200px; }
-.glow-top-right { top: -200px; right: -200px; }
-.glow-bottom-left { bottom: -200px; left: -200px; }
-.glow-bottom-right { bottom: -200px; right: -200px; }
+/* Grid + corner-glow styles are handled via inline styles in Background.tsx.
+   CSS variables --grid-color and --glow-color (defined above) are still
+   consumed by the component at runtime. */
 
 /* Custom Scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
