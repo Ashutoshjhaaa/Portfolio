@@ -44,7 +44,7 @@ export const InterviewCard = () => (
         href="https://hashnode.com/@ahutoshjha" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="flex items-center gap-2 group/hashnode px-3 py-1.5 rounded-full bg-input-bg border border-input-border hover:border-[#2962FF]/50 transition-all font-sans"
+        className="flex items-center gap-2 group/hashnode px-3 py-1.5 rounded-full bg-transparent hover:bg-input-bg transition-all font-sans"
       >
         <div className="w-5 h-5 flex items-center justify-center rounded bg-blue-600">
            <svg viewBox="0 0 24 24" fill="white" className="w-3.5 h-3.5">
@@ -52,7 +52,7 @@ export const InterviewCard = () => (
            </svg>
         </div>
         <span className="text-xs font-bold text-gray-700 dark:text-zinc-300 group-hover/hashnode:text-[#2962FF]">
-          @ahutoshjha 🚀
+          @ahutoshjha
         </span>
       </a>
     </div>

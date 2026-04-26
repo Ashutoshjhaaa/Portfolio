@@ -32,22 +32,6 @@ export const PinnedRepoCard: React.FC<PinnedRepoCardProps> = ({ repo }) => (
         <span className="h-2 w-2 shrink-0 rounded-full bg-blue-500"></span>
         <span className="text-gray-600 dark:text-zinc-400">{repo.language}</span>
       </div>
-      <div className="flex items-center gap-1 text-gray-600 dark:text-zinc-400">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-star h-3 w-3">
-          <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-        </svg>
-        <span>{repo.stars}</span>
-      </div>
-      <div className="flex items-center gap-1 text-gray-600 dark:text-zinc-400">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-git-fork h-3 w-3">
-          <circle cx="12" cy="18" r="3"></circle>
-          <circle cx="6" cy="6" r="3"></circle>
-          <circle cx="18" cy="6" r="3"></circle>
-          <path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9"></path>
-          <path d="M12 12v3"></path>
-        </svg>
-        <span>{repo.forks}</span>
-      </div>
     </div>
   </a>
 );
