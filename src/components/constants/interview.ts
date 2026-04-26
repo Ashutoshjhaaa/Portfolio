@@ -36,7 +36,7 @@ export const INTERVIEW_DATA = [
   },
   {
     name: 'SQL',
-    route: '/sql',
+    route: '/SQL',
     slug: 'postgresql',
     category: 'Database',
     description: 'Get tested on SQL queries, joins, indexing, normalization, and relational database management.',

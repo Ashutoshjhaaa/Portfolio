@@ -59,11 +59,9 @@ export const InterviewCard = () => (
 
   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
     {INTERVIEW_DATA.map((skill) => (
-      <a
+      <Link
         key={skill.name}
-        href="https://hashnode.com/@ahutoshjha"
-        target="_blank"
-        rel="noopener noreferrer"
+        href={skill.route}
         className="group flex min-h-30 sm:min-h-35 flex-col rounded-xl border p-3 sm:p-4 transition-all duration-200 cursor-pointer border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800"
       >
         <div className="mb-2 flex items-start justify-between">
@@ -90,7 +88,7 @@ export const InterviewCard = () => (
             <span className="text-gray-600 dark:text-zinc-400 font-medium whitespace-nowrap">{skill.category}</span>
           </div>
         </div>
-      </a>
+      </Link>
     ))}
   </div>
 </motion.div>
