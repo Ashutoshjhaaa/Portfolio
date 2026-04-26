@@ -10,7 +10,7 @@ export const PinnedRepoCard: React.FC<PinnedRepoCardProps> = ({ repo }) => (
     href={repo.url}
     target="_blank"
     rel="noopener noreferrer"
-    className="group flex min-h-30 flex-col rounded-xl border p-3 hover:shadow-md sm:min-h-35 sm:p-4 border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 hover:border-gray-300 dark:hover:border-zinc-500 shadow-sm"
+    className="group flex min-h-30 flex-col rounded-xl border p-3 hover:shadow-md sm:min-h-35 sm:p-4 border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 shadow-sm"
   >
     <div className="mb-2 flex items-start justify-between">
       <div className="min-w-0 flex-1 pr-2">

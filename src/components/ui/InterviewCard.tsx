@@ -44,7 +44,7 @@ export const InterviewCard = () => (
       <Link
         key={skill.name}
         href={skill.route}
-        className="group flex min-h-30 sm:min-h-35 flex-col rounded-xl border p-3 sm:p-4 shadow-sm transition-all duration-200 cursor-pointer border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 hover:border-gray-300 dark:hover:border-zinc-500 hover:shadow-md"
+        className="group flex min-h-30 sm:min-h-35 flex-col rounded-xl border p-3 sm:p-4 shadow-sm transition-all duration-200 cursor-pointer border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 hover:shadow-md"
       >
         <div className="mb-2 flex items-start justify-between">
           <div className="flex items-center gap-2 min-w-0 flex-1 pr-2">

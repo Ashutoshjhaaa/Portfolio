@@ -30,10 +30,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       className="group relative flex cursor-pointer w-full"
       style={{ opacity: 1, transform: 'none' }}
     >
-      <article className="relative flex w-full min-h-[180px] sm:min-h-[230px] flex-col rounded-2xl border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 p-4 hover:border-gray-300 dark:hover:border-zinc-500 hover:shadow-xl shadow-sm">
+      <article className="relative flex w-full min-h-[180px] sm:min-h-[230px] flex-col rounded-2xl border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 p-4 hover:shadow-xl shadow-sm">
         <div className="flex items-center justify-between mb-3">
           <div
-            className="w-6 h-6 text-xs bg-white dark:bg-zinc-700 overflow-hidden hover:opacity-80 transition-opacity"
+            className="w-6 h-6 text-xs overflow-hidden hover:opacity-80 transition-opacity"
           >
             {project.logo.length === 1 ? (
               <div className="w-full h-full flex items-center justify-center font-bold text-slate-400 dark:text-zinc-400 border border-slate-100 dark:border-zinc-600 rounded">
@@ -74,7 +74,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           </div>
         </div>
 
-        <h3 className="text-sm xs:text-base font-semibold text-gray-900 dark:text-zinc-100 break-words mb-2">
+        <h3 className="text-sm xs:text-base font-semibold text-gray-900 dark:text-zinc-100 break-words mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
           {project.name}
         </h3>
         <p className="text-xs xs:text-sm text-gray-600 dark:text-zinc-400 leading-relaxed mb-3 line-clamp-2">
