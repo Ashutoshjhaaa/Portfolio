@@ -28,7 +28,7 @@ export const InterviewCard = () => (
     initial="hidden"
     whileInView="visible"
     viewport={VIEWPORT_CONFIG}
-    className="rounded-3xl p-4 sm:p-8 border border-gray-200 dark:border-zinc-800 bg-white dark:bg-black shadow-xl overflow-hidden mt-8"
+    className="rounded-3xl p-4 sm:p-8 border border-gray-200 dark:border-zinc-800 bg-white dark:bg-black overflow-hidden mt-8"
   >
     <div className="flex items-center gap-2 mb-6">
       <div className="p-1.5 rounded-lg bg-input-bg border border-input-border">
@@ -44,7 +44,7 @@ export const InterviewCard = () => (
       <Link
         key={skill.name}
         href={skill.route}
-        className="group flex min-h-30 sm:min-h-35 flex-col rounded-xl border p-3 sm:p-4 shadow-sm transition-all duration-200 cursor-pointer border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 hover:shadow-md"
+        className="group flex min-h-30 sm:min-h-35 flex-col rounded-xl border p-3 sm:p-4 transition-all duration-200 cursor-pointer border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800"
       >
         <div className="mb-2 flex items-start justify-between">
           <div className="flex items-center gap-2 min-w-0 flex-1 pr-2">

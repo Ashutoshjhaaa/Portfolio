@@ -30,7 +30,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       className="group relative flex cursor-pointer w-full"
       style={{ opacity: 1, transform: 'none' }}
     >
-      <article className="relative flex w-full min-h-[180px] sm:min-h-[230px] flex-col rounded-2xl border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 p-4 hover:shadow-xl shadow-sm">
+      <article className="relative flex w-full min-h-[180px] sm:min-h-[230px] flex-col rounded-2xl border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 p-4">
         <div className="flex items-center justify-between mb-3">
           <div
             className="w-6 h-6 text-xs overflow-hidden hover:opacity-80 transition-opacity"
