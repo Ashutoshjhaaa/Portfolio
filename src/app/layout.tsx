@@ -47,6 +47,7 @@ export const metadata: Metadata = {
 
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function RootLayout({
   children,
@@ -62,6 +63,7 @@ export default function RootLayout({
           <div className="max-w-[1440px] mx-auto min-h-screen">
             {children}
           </div>
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
