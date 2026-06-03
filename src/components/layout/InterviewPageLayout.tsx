@@ -1,191 +1,101 @@
-'use client';
+"use client";
 
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { Search, Filter, ChevronLeft, ChevronRight, BarChart3 } from 'lucide-react';
+import { ArrowLeft, Search, Filter } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
-interface Stat {
-  label: string;
-  value: string;
-  icon: React.ReactNode;
-}
-
+interface NavPage { title: string; href: string; }
 interface InterviewPageLayoutProps {
   title: string;
   description: string;
-  icon: string | React.ReactNode;
-  stats: Stat[];
+  icon: React.ReactNode;
+  stats: { label: string; value?: string; icon?: React.ReactNode }[];
   children: React.ReactNode;
-  searchValue: string;
-  onSearchChange: (value: string) => void;
-  activeFilter: string;
-  onFilterChange: (filter: string) => void;
-  searchPlaceholder?: string;
-  prevPage?: { title: string; href: string };
-  nextPage?: { title: string; href: string };
+  onFilterChange?: (filter: string) => void;
+  onSearchChange?: (query: string) => void;
+  activeFilter?: string;
+  searchValue?: string;
+  prevPage?: NavPage;
+  nextPage?: NavPage;
 }
 
-export default function InterviewPageLayout({
-  title,
-  description,
-  icon,
-  stats,
-  children,
-  searchValue,
-  onSearchChange,
-  activeFilter,
-  onFilterChange,
-  searchPlaceholder,
-  prevPage,
-  nextPage
-}: InterviewPageLayoutProps) {
+export const InterviewPageLayout = ({
+  title, description, icon, stats, children, onFilterChange, onSearchChange,
+  activeFilter = "all", searchValue = "", prevPage, nextPage,
+}: InterviewPageLayoutProps) => {
   return (
-    <div className="min-h-screen bg-white dark:bg-black selection:bg-orange-500/30">
-      {/* Top Navigation Bar */}
-      <nav className="sticky top-0 z-50 w-full border-b border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-black/80 backdrop-blur-md">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between">
-            <Link 
-              href="/" 
-              className="flex items-center gap-2 text-sm font-bold text-zinc-600 dark:text-zinc-400 hover:text-orange-500 transition-colors"
-            >
-              <ChevronLeft className="w-4 h-4" />
-              Back to Portfolio
-            </Link>
-            
-            <div className="flex items-center gap-3">
-              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-600">
-                Portfolio
-              </span>
-              <div className="w-1.5 h-1.5 rounded-full bg-orange-500" />
-              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-900 dark:text-zinc-100">
-                Interview Prep
-              </span>
-            </div>
+    <div className="min-h-screen bg-transparent text-foreground font-sans">
+      <nav className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md px-6 py-4">
+        <div className="mx-auto flex max-w-5xl items-center justify-between">
+          <Link href="/" className="group flex items-center gap-2 text-sm font-bold text-muted-foreground transition-colors hover:text-link">
+            <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" /> Back to Portfolio
+          </Link>
+          <div className="text-[10px] font-black tracking-widest text-muted-foreground uppercase flex items-center gap-2">
+            Interview Prep <span className="w-1 h-1 rounded-full bg-link" /> Engineering
           </div>
         </div>
       </nav>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-24">
-        {/* Header Section */}
-        <div className="space-y-8 mb-16 sm:mb-20">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <div className="p-4 rounded-3xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-sm">
-              {typeof icon === 'string' ? (
-                <img src={icon} alt={title} className="w-12 h-12" />
-              ) : (
-                icon
-              )}
-            </div>
-            <div className="space-y-2">
-              <h1 className="text-4xl sm:text-5xl font-black text-zinc-900 dark:text-zinc-100 tracking-tight">
-                {title}
-              </h1>
-              <p className="max-w-2xl text-lg text-zinc-600 dark:text-zinc-400 font-medium leading-relaxed">
-                {description}
-              </p>
-            </div>
+      <header className="px-6 py-12 lg:py-20">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="inline-flex items-center justify-center p-4 rounded-2xl bg-muted/20 border border-border/50 mb-8">
+            {typeof icon === 'string' ? <img src={icon} alt="" className="w-12 h-12 object-contain" /> : <span className="text-4xl">{icon}</span>}
           </div>
-
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                className="p-5 rounded-2xl bg-zinc-50/50 dark:bg-zinc-900/30 border border-zinc-200 dark:border-zinc-800 backdrop-blur-sm"
-              >
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 rounded-xl bg-white dark:bg-zinc-900 shadow-sm border border-zinc-200 dark:border-zinc-800">
-                    {stat.icon}
-                  </div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-500">
-                    {stat.label}
-                  </span>
-                </div>
-                <div className="text-xl font-black text-zinc-900 dark:text-zinc-100">
-                  {stat.value}
-                </div>
-              </motion.div>
+          <h1 className="text-4xl font-black tracking-tight sm:text-6xl mb-6">{title}</h1>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-12">{description}</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {stats.map((s, i) => (
+              <div key={i} className="flex flex-col items-center gap-1 rounded-2xl bg-muted/10 px-6 py-4 border border-border/50 min-w-[140px]">
+                <div className="flex items-center gap-2 text-link">{s.icon} <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">{s.label}</span></div>
+                <span className="text-sm font-bold">{s.value}</span>
+              </div>
             ))}
           </div>
-
-          {/* Search & Filter Bar */}
-          <div className="flex flex-col md:flex-row gap-4">
-            <div className="relative flex-1 group">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-400 group-focus-within:text-orange-500 transition-colors" />
-              <input
-                type="text"
-                placeholder={searchPlaceholder || "Search concepts, questions, or keywords..."}
-                value={searchValue}
-                onChange={(e) => onSearchChange(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all font-medium"
-              />
-            </div>
-            <div className="flex p-1 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
-              {['all', 'easy', 'medium', 'hard'].map((filter) => (
-                <button
-                  key={filter}
-                  onClick={() => onFilterChange(filter)}
-                  className={`px-4 sm:px-6 py-3 rounded-xl text-sm font-bold capitalize transition-all ${
-                    activeFilter === filter
-                      ? 'bg-white dark:bg-zinc-800 text-orange-500 shadow-sm'
-                      : 'text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100'
-                  }`}
-                >
-                  {filter}
-                </button>
-              ))}
-            </div>
-          </div>
         </div>
+      </header>
 
-        {/* Content */}
-        <main className="min-h-[400px]">
-          {children}
-        </main>
-
-        {/* Navigation */}
-        <div className="mt-20 pt-12 border-t border-zinc-100 dark:border-zinc-900">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {prevPage ? (
-              <Link
-                href={prevPage.href}
-                className="group p-6 rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-orange-500/50 transition-all duration-300"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="p-3 rounded-2xl bg-zinc-50 dark:bg-zinc-900 group-hover:bg-orange-50 dark:group-hover:bg-orange-500/10 text-zinc-400 group-hover:text-orange-500 transition-colors">
-                    <ChevronLeft className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-bold text-zinc-500 mb-1">Previous Topic</div>
-                    <div className="text-xl font-black text-zinc-900 dark:text-zinc-100">{prevPage.title}</div>
-                  </div>
-                </div>
-              </Link>
-            ) : <div />}
-            {nextPage ? (
-              <Link
-                href={nextPage.href}
-                className="group p-6 rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-orange-500/50 transition-all duration-300 text-right"
-              >
-                <div className="flex items-center justify-end gap-4">
-                  <div>
-                    <div className="text-sm font-bold text-zinc-500 mb-1">Next Topic</div>
-                    <div className="text-xl font-black text-zinc-900 dark:text-zinc-100">{nextPage.title}</div>
-                  </div>
-                  <div className="p-3 rounded-2xl bg-zinc-50 dark:bg-zinc-900 group-hover:bg-orange-50 dark:group-hover:bg-orange-500/10 text-zinc-400 group-hover:text-orange-500 transition-colors">
-                    <ChevronRight className="w-6 h-6" />
-                  </div>
-                </div>
-              </Link>
-            ) : <div />}
+      <div className="border-y border-border/50 bg-background px-6 py-4">
+        <div className="mx-auto max-w-3xl flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-wrap items-center gap-2">
+            <Filter className="mr-1 h-3.5 w-3.5 text-muted-foreground" />
+            {["all", "easy", "medium", "hard"].map((f) => (
+              <button key={f} onClick={() => onFilterChange?.(f)}
+                className={cn("rounded-full px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest transition-all border",
+                  activeFilter === f ? "bg-foreground text-background border-transparent" : "bg-transparent text-muted-foreground border-border/50 hover:border-border")}>
+                {f}
+              </button>
+            ))}
+          </div>
+          <div className="relative flex-1 sm:max-w-xs">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <input type="text" placeholder="Search..." value={searchValue} onChange={(e) => onSearchChange?.(e.target.value)}
+              className="w-full rounded-full border border-border bg-muted/5 py-2 pl-9 pr-4 text-sm font-semibold outline-none focus:border-link transition-all" />
           </div>
         </div>
       </div>
+
+      <main className="mx-auto max-w-3xl px-6 py-12">
+        <div className="space-y-6">{children}</div>
+        {(prevPage || nextPage) && (
+          <div className="mt-20 flex flex-col gap-4 sm:flex-row pt-10 border-t border-border/50">
+            {prevPage && (
+              <Link href={prevPage.href} className="flex-1 p-6 rounded-2xl border border-border/50 hover:border-link transition-all">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2 mb-2"><ArrowLeft className="w-3 h-3" /> Previous</span>
+                <span className="text-lg font-bold">{prevPage.title}</span>
+              </Link>
+            )}
+            {nextPage && (
+              <Link href={nextPage.href} className="flex-1 p-6 rounded-2xl border border-border/50 hover:border-link transition-all text-right">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2 mb-2 justify-end">Next <ArrowLeft className="w-3 h-3 rotate-180" /></span>
+                <span className="text-lg font-bold">{nextPage.title}</span>
+              </Link>
+            )}
+          </div>
+        )}
+      </main>
     </div>
   );
-}
+};
+
+export default InterviewPageLayout;

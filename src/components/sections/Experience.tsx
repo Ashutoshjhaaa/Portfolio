@@ -1,38 +1,97 @@
 "use client";
 
-import React from 'react';
-import { portfolioData } from "@/components/constants/data";
+import { EXPERIENCE } from "@/app/constants/data";
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
+import CollapsibleGrid from "@/components/ui/collapsible-grid";
 
-export const Experience = () => {
+export default function Experience() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
   return (
-    <section className="pt-4" aria-label="Work experience">
-      <h2 className="mb-4 text-base font-bold text-gray-900 dark:text-zinc-100 text-left">{portfolioData.titles.experience}</h2>
-      <div className="space-y-4">
-        {portfolioData.experience.map((exp, i) => (
-          <div key={i} className="relative">
-            {/* dot removed */}
-            <div className="rounded-2xl border border-gray-100 dark:border-zinc-700 bg-white dark:bg-zinc-800/60 p-4 shadow-sm hover:shadow-md">
-                <div className="flex items-center gap-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white dark:bg-zinc-700 flex-shrink-0 border border-gray-200 dark:border-zinc-600 shadow-sm overflow-hidden">
-                    {exp.logo ? (
-                      <img alt={exp.company} className="h-6 w-6 object-contain" src={exp.logo} />
-                    ) : (
-                      <span className="text-xs font-bold text-gray-400 dark:text-zinc-500">
-                        {exp.company.charAt(0)}
-                      </span>
-                    )}
+    <section id="experience" className="liquid-glass rounded-2xl overflow-hidden">
+      <div className="flex items-center p-4 border-b border-border">
+        <h2 className="text-2xl font-semibold flex items-center">
+          work experience.
+        </h2>
+      </div>
+
+      <div className="relative divide-y divide-border">
+        {EXPERIENCE.map((exp, index) => (
+          <CollapsibleGrid
+            key={`${exp.role}-${exp.company}`}
+            isExpanded={activeIndex === index}
+            onToggle={() =>
+              setActiveIndex(activeIndex === index ? null : index)
+            }
+            header={
+              <div className="flex items-center gap-3">
+                {exp.logo && (
+                  <div className="w-12 h-12 flex-shrink-0 rounded-xl border border-border overflow-hidden bg-background">
+                    <Image
+                      src={exp.logo}
+                      alt={`${exp.company} logo`}
+                      width={48}
+                      height={48}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="text-sm font-bold text-gray-900 dark:text-zinc-100">{exp.company}</div>
-                    <div className="text-[11px] font-semibold text-gray-500 dark:text-zinc-400">
-                      {exp.role} • {exp.duration}
-                    </div>
-                  </div>
+                )}
+
+                <div className="flex-1 min-w-0 space-y-0.5">
+                  <h3 className="font-medium text-base leading-snug">
+                    {exp.role}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    <Link
+                      href={exp.companyLink || "#"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="link"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      @ {exp.company}
+                      <ArrowUpRight className="inline-block w-4 h-4 ml-1 align-text-bottom text-muted-foreground" />
+                    </Link>
+                  </p>
+                </div>
+
+                <div className="hidden sm:flex flex-col text-right font-mono text-sm text-muted-foreground">
+                  <span>{exp.period}</span>
+                  <span>{exp.location}</span>
                 </div>
               </div>
+            }
+          >
+            {/* Collapsible Details */}
+            <div className="space-y-3">
+              {/* Mobile-only Period/Location (visible inside collapsible) */}
+              <div className="flex flex-col sm:hidden mb-2 text-left">
+                <span className="text-sm text-muted-foreground font-mono">
+                  {exp.period} • {exp.location}
+                </span>
+              </div>
+
+              <p className="text-sm text-muted-foreground text-justify leading-relaxed">
+                {exp.description}
+              </p>
+
+              <div className="flex flex-wrap gap-1.5">
+                {exp.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-2 py-1 text-xs badge text-foreground"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
-          ))}
-        </div>
+          </CollapsibleGrid>
+        ))}
+      </div>
     </section>
   );
-};
+}

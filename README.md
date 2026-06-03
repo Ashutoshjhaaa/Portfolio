@@ -1,58 +1,36 @@
-# DevFolio - Developer Portfolio
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-A modern, visually stunning, and high-performance developer portfolio built with **Next.js 15**, **Tailwind CSS**, and **Framer Motion**.
+## Getting Started
 
-## 🚀 Overview
+First, run the development server:
 
-DevFolio is designed to showcase professional experience, technical skills, and creative projects with a premium, state-of-the-art aesthetic. It features a responsive layout with a persistent sidebar and a dynamic main content area.
-
-## ✨ Features
-
-- **Premium Design**: Dark mode support, glassmorphism, and smooth micro-animations.
-- **Responsive Layout**: Optimized for all devices from mobile to large desktops.
-- **Persistent Sidebar**: Quick access to profile info, social links, and core skills.
-- **Dynamic Content**: Easily customizable via `src/lib/data.ts`.
-- **High Performance**: Built on Next.js 15 for lightning-fast load times.
-
-## 🛠️ Tech Stack
-
-- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **Icons**: [Lucide React](https://lucide.dev/) & [React Icons](https://react-icons.github.io/react-icons/)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-
-## 🏁 Getting Started
-
-### Prerequisites
-
-- Node.js 18.x or later
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 🏗️ Customization
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-Most of the content (Name, Bio, Projects, Skills, Experience) can be updated in:
-`src/lib/data.ts`
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## 📄 License
+## Learn More
 
-This project is licensed under the MIT License.
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

@@ -1,17 +1,27 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  poweredByHeader: false,
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'cdn.simpleicons.org',
+        protocol: "https",
+        hostname: "skillicons.dev",
       },
       {
-        protocol: 'https',
-        hostname: 'github.com',
+        protocol: "https",
+        hostname: "hits.sh",
+      },
+      {
+        protocol: "https",
+        hostname: "t2.gstatic.com",
+      },
+      {
+        protocol: "https",
+        hostname: "github.com",
       },
     ],
+    dangerouslyAllowSVG: true,
   },
 };
 
