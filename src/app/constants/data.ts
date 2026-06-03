@@ -16,6 +16,7 @@ export const ABOUT_ME = {
 export const USER_NAMES = {
   githubUsername: "Ashutoshjhaaa",
   hashnodeUsername: "ashutoshjha",
+  leetcodeUsername: "ashutoshjha",
 };
 
 export const SOCIAL_LINKS = {
