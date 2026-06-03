@@ -14,12 +14,12 @@ export default function Footer() {
       {/* Views Counter */}
       <div className="mt-4 flex justify-center">
         <a
-          href="https://hits.sh/subhashjha.me/"
+          href="https://hits.sh/ashutoshjh.me/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <Image
-            src="https://hits.sh/subhashjha.me.svg?style=for-the-badge&label=Views&color=2d2d2d&labelColor=141414"
+            src="https://hits.sh/ashutoshjh.me.svg?style=for-the-badge&label=Views&color=2d2d2d&labelColor=141414"
             alt="Views"
             width={100}
             height={20}
