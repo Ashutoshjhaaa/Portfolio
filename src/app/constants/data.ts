@@ -40,7 +40,7 @@ export const EXPERIENCE = [
     companyLink: "https://pwskills.com/",
     logo: "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://pwskills.com/&size=64",
     role: "Frontend Developer Intern",
-    period: "November 2025 - January 2026",
+    period: "November 2024 - January 2025",
     location: "Remote",
     description:
       "Engineered learning dashboard interfaces using Next.js and Tailwind CSS, boosting active user engagement by 15%. Optimized client-side rendering and asset delivery, cutting page load times by 35% and improving performance. Connected backend REST APIs with React state management to save user data and track student course progress. Debugged 30+ cross-browser compatibility bugs, ensuring consistent layout rendering across mobile devices.",
