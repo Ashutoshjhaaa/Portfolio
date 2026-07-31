@@ -43,8 +43,8 @@ export const EXPERIENCE = [
     period: "November 2024 - January 2025",
     location: "Remote",
     description:
-      "Engineered learning dashboard interfaces using Next.js and Tailwind CSS, boosting active user engagement by 15%. Optimized client-side rendering and asset delivery, cutting page load times by 35% and improving performance. Connected backend REST APIs with React state management to save user data and track student course progress. Debugged 30+ cross-browser compatibility bugs, ensuring consistent layout rendering across mobile devices.",
-    skills: ["Next.js", "REST APIs", "Tailwind CSS", "JavaScript", "Git"],
+      " Developed responsive and interactive web application using React.js, HTML5, CSS3, and JavaScript. Improved website performance by reducing load time by 25% through code-splitting and image optimization.Collaborated in agile development cycles and contributed to team-based frontend projects.",
+    skills: ["React.js", "HTML5", "CSS3", "JavaScript", "Git"],
   },
 
 ];
