@@ -1,0 +1,95 @@
+:root {
+  --bg-primary: #0b0d0e;
+  --bg-surface: #1a1b1c;
+  --bg-surface-elevated: #232326;
+  --bg-surface-subtle: #151515;
+  --bg-loading: #0a0a0a;
+
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --text-tertiary: #b4b4b4;
+  --text-muted: #999999;
+  --text-faint: #71767b;
+  --text-dim: #666666;
+  --text-ghost: #333333;
+
+  --border-default: #444444;
+  --border-hover: #888888;
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --card-dashed-border: rgba(255, 255, 255, 0.2);
+  --card-dashed-hover: rgba(255, 255, 255, 0.45);
+
+  --accent-blue: #3b82f6;
+  --accent-amber: #f59e0b;
+  --accent-green: #22c55e;
+  --accent-red: #ef4444;
+
+  --font-ui: 'Figtree', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --max-width: 700px;
+}
+
+[data-theme='light'] {
+  --bg-primary: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f1f5f9;
+  --bg-surface-subtle: #f8fafc;
+  --bg-loading: #ffffff;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #64748b;
+  --text-muted: #64748b;
+  --text-faint: #94a3b8;
+  --text-dim: #94a3b8;
+  --text-ghost: #cbd5e1;
+
+  --border-default: #e2e8f0;
+  --border-hover: #94a3b8;
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --card-dashed-border: rgba(15, 23, 42, 0.2);
+  --card-dashed-hover: rgba(15, 23, 42, 0.45);
+
+  --accent-blue: #2563eb;
+  --accent-amber: #d97706;
+  --accent-green: #16a34a;
+  --accent-red: #dc2626;
+}
+
+
+.app-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 18px 60px 18px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1;
+  width: 100%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  .app-container {
+    padding: 0 14px 40px 14px;
+  }
+}

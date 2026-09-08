@@ -1,0 +1,286 @@
+.interview-section {
+  width: 100%;
+}
+
+.interview-card-container {
+  background-color: transparent;
+  border: 1px dashed var(--card-dashed-border, rgba(255, 255, 255, 0.2));
+  border-radius: 8px;
+  padding: 18px 20px;
+  transition: border-color 0.2s ease;
+}
+
+.interview-card-container:hover {
+  border-color: var(--card-dashed-hover, rgba(255, 255, 255, 0.45));
+}
+
+.interview-header-info {
+  margin-bottom: 16px;
+}
+
+.interview-header-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.interview-main-title {
+  font-family: var(--font-ui);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.interview-topics-count {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent-blue, #3b82f6);
+  background-color: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.interview-sub-text {
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* Horizontal Topic Pills Bar (Wrapped, No Scroller) */
+.interview-pills-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 4px;
+  margin-bottom: 16px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.interview-pills-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.interview-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 13px;
+  background-color: var(--bg-surface-elevated, #232326);
+  border: 1px solid var(--border-default, rgba(255, 255, 255, 0.12));
+  border-radius: 8px;
+  color: var(--text-secondary, #b3b3b3);
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.18s ease;
+}
+
+.interview-pill-btn:hover {
+  background-color: var(--bg-surface, #1a1b1c);
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+  transform: translateY(-1px);
+}
+
+.interview-pill-btn.is-selected {
+  background-color: var(--bg-surface, #1a1b1c);
+  color: var(--text-primary);
+  border: 1.5px solid var(--accent-blue, #3b82f6);
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.22);
+}
+
+.pill-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+}
+
+.pill-label {
+  letter-spacing: -0.01em;
+}
+
+.pill-badge-count {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 1px 6px;
+  border-radius: 10px;
+  color: var(--text-tertiary);
+}
+
+.interview-pill-btn.is-selected .pill-badge-count {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: var(--accent-blue, #3b82f6);
+}
+
+/* Selected Topic Details View Panel */
+.interview-details-panel {
+  background-color: var(--bg-surface, #1a1b1c);
+  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.08));
+  border-radius: 8px;
+  padding: 16px 18px;
+}
+
+.interview-panel-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.panel-topic-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.panel-badge-square {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.35rem;
+  font-weight: 800;
+  font-family: var(--font-ui), sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.panel-topic-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.panel-topic-title {
+  font-family: var(--font-ui);
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.panel-category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+}
+
+.cat-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-green, #22c55e);
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.7);
+}
+
+.interview-explore-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.15s ease;
+}
+
+.interview-explore-btn:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.ext-arrow {
+  font-size: 0.85rem;
+}
+
+.panel-topic-desc {
+  font-family: var(--font-ui);
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ========================================= */
+/* Light Mode Overrides                      */
+/* ========================================= */
+[data-theme='light'] .interview-pill-btn {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #475569;
+}
+
+[data-theme='light'] .interview-pill-btn:hover {
+  background-color: #ffffff;
+  color: #0f172a;
+  border-color: #94a3b8;
+}
+
+[data-theme='light'] .interview-pill-btn.is-selected {
+  border-color: #2563eb;
+  background-color: #eff6ff;
+  color: #1e3a8a;
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.18);
+}
+
+[data-theme='light'] .interview-details-panel {
+  background-color: #ffffff;
+  border-color: #e2e8f0;
+}
+
+[data-theme='light'] .interview-explore-btn {
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+/* ========================================= */
+/* Responsive Styles                         */
+/* ========================================= */
+@media (max-width: 640px) {
+  .interview-card-container {
+    padding: 14px 12px;
+  }
+
+  .interview-details-panel {
+    padding: 12px 10px;
+  }
+
+  .interview-panel-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .interview-explore-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,220 @@
+.quote-section-container {
+  width: 100%;
+  margin: 48px 0 16px 0;
+  padding: 12px 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Blueprint wrapper that holds the dashed borders and crosshairs */
+.quote-blueprint-wrapper {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Outer extending dashed lines */
+.quote-blueprint-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  bottom: -12px;
+  left: 0;
+  right: 0;
+  border-left: 1px dashed rgba(255, 255, 255, 0.14);
+  border-right: 1px dashed rgba(255, 255, 255, 0.14);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.quote-blueprint-wrapper::after {
+  content: '';
+  position: absolute;
+  left: -12px;
+  right: -12px;
+  top: 0;
+  bottom: 0;
+  border-top: 1px dashed rgba(255, 255, 255, 0.14);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.14);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Corner Crosshairs (+) */
+.corner-cross {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono, monospace);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.45);
+  user-select: none;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.corner-tl {
+  top: -7.5px;
+  left: -7.5px;
+}
+
+.corner-tr {
+  top: -7.5px;
+  right: -7.5px;
+}
+
+.corner-bl {
+  bottom: -7.5px;
+  left: -7.5px;
+}
+
+.corner-br {
+  bottom: -7.5px;
+  right: -7.5px;
+}
+
+/* The card box */
+.quote-card-inner {
+  position: relative;
+  background: radial-gradient(ellipse at 50% 30%, #151619 0%, #0c0d0f 100%);
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  padding: 44px 36px 36px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.quote-card-inner:hover {
+  border-color: rgba(255, 255, 255, 0.32);
+}
+
+/* Quote SVG Icon */
+.quote-icon-wrap {
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quote-svg-icon {
+  width: 32px;
+  height: 26px;
+  color: rgba(255, 255, 255, 0.42);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.quote-card-inner:hover .quote-svg-icon {
+  color: rgba(255, 255, 255, 0.65);
+  transform: translateY(-2px);
+}
+
+/* Quote Typography */
+.quote-text {
+  margin: 0 0 28px 0;
+  padding: 0 12px;
+  font-family: 'Playfair Display', 'Lora', 'Georgia', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.55rem;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  color: #f3f3f3;
+  max-width: 580px;
+  text-wrap: balance;
+  transition: color 0.3s ease;
+}
+
+/* Author Divider */
+.quote-author-divider {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.quote-rule-line {
+  width: 36px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.22);
+}
+
+.quote-author-name {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--text-dim, #737373);
+  text-transform: uppercase;
+}
+
+/* Light Theme Support */
+[data-theme='light'] .quote-blueprint-wrapper::before,
+[data-theme='light'] .quote-blueprint-wrapper::after {
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+[data-theme='light'] .corner-cross {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+[data-theme='light'] .quote-card-inner {
+  background: radial-gradient(ellipse at 50% 30%, #ffffff 0%, #f1f5f9 100%);
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.03);
+}
+
+[data-theme='light'] .quote-card-inner:hover {
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='light'] .quote-svg-icon {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+[data-theme='light'] .quote-card-inner:hover .quote-svg-icon {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+[data-theme='light'] .quote-text {
+  color: #0f172a;
+}
+
+[data-theme='light'] .quote-rule-line {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='light'] .quote-author-name {
+  color: #64748b;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .quote-card-inner {
+    padding: 34px 20px 28px 20px;
+  }
+
+  .quote-text {
+    font-size: 1.22rem;
+    line-height: 1.4;
+    margin-bottom: 22px;
+    padding: 0;
+  }
+
+  .quote-svg-icon {
+    width: 26px;
+    height: 22px;
+  }
+
+  .quote-rule-line {
+    width: 24px;
+  }
+}
