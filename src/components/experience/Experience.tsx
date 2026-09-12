@@ -20,7 +20,7 @@ const experienceData: ExperienceItem[] = [
     id: 'digiglobe',
     company: 'Digiglobe Solution',
     companyLink: 'https://digiglobesolution.com/',
-    logo: 'https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://digiglobesolution.com/&size=128',
+    logo: '/logos/digiglobe.svg',
     logoText: 'DS',
     role: 'Front End Developer Intern',
     period: 'July 2025 - January 2026',

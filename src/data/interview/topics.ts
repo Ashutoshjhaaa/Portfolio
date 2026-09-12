@@ -19,6 +19,7 @@ export interface TopicConfig {
   badgeText: string;
   badgeBg: string;
   badgeColor: string;
+  iconColor?: string;
   title: string;
   description: string;
   stats: StatItem[];
@@ -34,6 +35,7 @@ export const TOPICS_CONFIG: Record<string, TopicConfig> = {
     badgeText: 'JS',
     badgeBg: '#F7DF1E',
     badgeColor: '#000000',
+    iconColor: '#EAB308',
     title: 'JS100: Core Engine Mechanics',
     description:
       "Deep dive into JavaScript's heart — from closures and the event loop to modern ES2024 features and high-performance design patterns.",
@@ -53,6 +55,7 @@ export const TOPICS_CONFIG: Record<string, TopicConfig> = {
     badgeText: 'React',
     badgeBg: '#102a3a',
     badgeColor: '#61DAFB',
+    iconColor: '#00b4d8',
     title: 'React: Component Architecture & Hooks',
     description:
       'Master React 19 architecture, Fiber reconciliation, custom hooks lifecycle, state management, optimization techniques, and component patterns.',
@@ -72,6 +75,7 @@ export const TOPICS_CONFIG: Record<string, TopicConfig> = {
     badgeText: 'Node',
     badgeBg: '#132e1b',
     badgeColor: '#22c55e',
+    iconColor: '#22c55e',
     title: 'Node.js: Backend Runtimes & Scalability',
     description:
       'Master backend runtime concepts, Libuv thread pool, asynchronous I/O, streams, buffer management, cluster module, and REST APIs.',
@@ -91,6 +95,7 @@ export const TOPICS_CONFIG: Record<string, TopicConfig> = {
     badgeText: 'SQL',
     badgeBg: '#18273d',
     badgeColor: '#38bdf8',
+    iconColor: '#0284c7',
     title: 'SQL: Relational Database Architecture',
     description:
       'Practice relational database design, complex JOINs, indexing strategies, transactions, ACID properties, and query optimization.',
@@ -110,6 +115,7 @@ export const TOPICS_CONFIG: Record<string, TopicConfig> = {
     badgeText: 'HTML5',
     badgeBg: '#E34F26',
     badgeColor: '#FFFFFF',
+    iconColor: '#E34F26',
     title: 'HTML5: Semantic Web & Browser APIs',
     description:
       'Practice essential HTML5 interview questions, semantic web architecture, accessibility (a11y), DOM tree mechanics, and web storage.',
@@ -129,6 +135,7 @@ export const TOPICS_CONFIG: Record<string, TopicConfig> = {
     badgeText: 'CSS3',
     badgeBg: '#1572B6',
     badgeColor: '#FFFFFF',
+    iconColor: '#1572B6',
     title: 'CSS3: Modern Layouts & Cascade',
     description:
       'Master core CSS concepts, modern Flexbox, Grid systems, responsive design, animations, CSS specificity, cascade layers (@layer), and 60fps rendering.',

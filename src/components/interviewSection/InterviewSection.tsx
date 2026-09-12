@@ -55,7 +55,7 @@ export const InterviewSection: React.FC = () => {
                 <span
                   className="pill-icon"
                   style={{
-                    color: topic.badgeColor === '#000000' ? '#F7DF1E' : topic.badgeColor,
+                    color: topic.iconColor || (topic.badgeColor === '#000000' ? '#F7DF1E' : topic.badgeColor),
                   }}
                 >
                   {topicIcons[topic.id] || topic.badgeText}

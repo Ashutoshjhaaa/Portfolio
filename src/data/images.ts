@@ -8,6 +8,7 @@ export const userImages = {
     foodieFrenzy: "/projects/foodie-frenzy/hero.png",
     shortIq: "/projects/shortiq/hero.png",
     tatva: "/projects/tatva/hero.png",
+    meetly: "/projects/meetly/hero.png",
     imagify: "/projects/imagify/hero.png",
   }
 };

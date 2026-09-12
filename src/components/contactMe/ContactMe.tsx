@@ -225,7 +225,7 @@ export const ContactMe: React.FC = () => {
                   <FaXTwitter />
                 </a>
                 <a
-                  href="https://peerlist.io/ashutoshjha"
+                  href="https://peerlist.io/ashujha"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-quick-link"
@@ -235,7 +235,7 @@ export const ContactMe: React.FC = () => {
                   <SiPeerlist />
                 </a>
                 <a
-                  href="https://hashnode.com/@ashutoshjha"
+                  href="https://hashnode.com/@ahutoshjha"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-quick-link"

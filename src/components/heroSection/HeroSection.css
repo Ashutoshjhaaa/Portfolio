@@ -107,25 +107,50 @@
 .hero-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-.hero-btn.primary {
+.hero-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: var(--text-primary);
-  color: var(--bg-primary);
   font-family: var(--font-ui);
   font-size: 0.85rem;
   font-weight: 600;
   padding: 8px 16px;
   border-radius: 6px;
-  transition: opacity 0.15s ease;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.hero-btn svg {
+  font-size: 0.92rem;
+  flex-shrink: 0;
+}
+
+.hero-btn.primary {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
 }
 
 .hero-btn.primary:hover {
   opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.hero-btn.secondary {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-default);
+}
+
+.hero-btn.secondary:hover {
+  background-color: var(--bg-surface-elevated);
+  border-color: var(--border-hover);
+  transform: translateY(-1px);
 }
 
 .hero-social-pills {
@@ -153,6 +178,17 @@
 }
 
 /* Light Mode Overrides */
+[data-theme='light'] .hero-btn.secondary {
+  background-color: #ffffff;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+[data-theme='light'] .hero-btn.secondary:hover {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+}
+
 [data-theme='light'] .social-pill {
   background-color: #ffffff;
   border-color: #cbd5e1;

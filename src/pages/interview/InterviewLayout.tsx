@@ -126,7 +126,7 @@ export const InterviewLayout: React.FC = () => {
               className={`topic-switch-btn ${isSelected ? 'is-active' : ''}`}
               aria-selected={isSelected}
             >
-              <span className="topic-btn-icon" style={{ color: t.badgeColor === '#000000' ? '#F7DF1E' : t.badgeColor }}>
+              <span className="topic-btn-icon" style={{ color: t.iconColor || (t.badgeColor === '#000000' ? '#F7DF1E' : t.badgeColor) }}>
                 {topicIcons[t.id] || t.badgeText}
               </span>
               <span className="topic-btn-name">{t.name}</span>
