@@ -1,0 +1,317 @@
+.experience-section {
+  width: 100%;
+}
+
+/* Outer Card Container with Dashed Border matching screenshot */
+.experience-card-container {
+  background-color: transparent;
+  border: 1px dashed var(--card-dashed-border, rgba(255, 255, 255, 0.2));
+  border-radius: 8px;
+  padding: 16px 20px;
+  transition: border-color 0.2s ease;
+}
+
+.experience-card-container:hover {
+  border-color: var(--card-dashed-hover, rgba(255, 255, 255, 0.45));
+}
+
+/* Timeline Vertical Line */
+.timeline-track {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 20px;
+  border-left: 1px dashed var(--card-dashed-border, rgba(255, 255, 255, 0.25));
+  margin-left: 8px;
+}
+
+.timeline-node {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Timeline Node Indicator (Clean Glowing Dots) */
+.timeline-indicator {
+  position: absolute;
+  left: -20px;
+  top: 29px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.timeline-glow-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: block;
+}
+
+.dot-active {
+  background-color: #22c55e;
+}
+
+.dot-done {
+  background-color: #ef4444;
+}
+
+/* Experience Item Wrapper */
+.experience-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  transition: background-color 0.15s ease;
+}
+
+.experience-item-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.15s ease;
+}
+
+.experience-item-header:hover {
+  background-color: var(--bg-surface-elevated);
+}
+
+/* Company Logo Box */
+.company-logo-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background-color: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.company-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.company-logo-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* Main Info */
+.experience-main-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.experience-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.exp-company-name {
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.company-ext-link {
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.82rem;
+  transition: color 0.15s ease;
+}
+
+.company-ext-link:hover {
+  color: var(--text-primary);
+}
+
+.ext-icon {
+  font-size: 0.82rem;
+}
+
+/* Status Pill Badges */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 1px 7px;
+  border-radius: 12px;
+  line-height: 1.2;
+}
+
+.status-bullet {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.status-active {
+  background-color: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.status-active .status-bullet {
+  background-color: #22c55e;
+}
+
+.status-done {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.status-done .status-bullet {
+  background-color: #ef4444;
+}
+
+.exp-role-title {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* Meta Right (Date & Chevron) */
+.experience-meta-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.exp-period-text {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+}
+
+.chevron-icon {
+  font-size: 0.9rem;
+  color: var(--text-tertiary);
+  transition: transform 0.2s ease;
+}
+
+.chevron-icon.rotated {
+  transform: rotate(180deg);
+}
+
+/* Expandable Details */
+.experience-details-expand {
+  padding: 6px 10px 10px 56px;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.exp-bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.exp-bullet-item {
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  position: relative;
+  padding-left: 14px;
+}
+
+.exp-bullet-item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--text-faint);
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .experience-card-container {
+    padding: 14px 12px;
+  }
+
+  .timeline-track {
+    margin-left: 4px;
+    padding-left: 14px;
+  }
+
+  .timeline-indicator {
+    left: -14px;
+  }
+
+  .experience-item-header {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 6px 4px;
+  }
+
+  .experience-meta-right {
+    margin-left: 56px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .experience-details-expand {
+    padding-left: 14px;
+  }
+}
+
+/* Light Mode Overrides */
+[data-theme='light'] .experience-item-header:hover {
+  background-color: #f1f5f9;
+}
+
+[data-theme='light'] .company-logo-box {
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .company-ext-link {
+  color: #64748b;
+}
+
+[data-theme='light'] .company-ext-link:hover {
+  color: #0f172a;
+}
+
+[data-theme='light'] .exp-bullet-item::before {
+  color: #94a3b8;
+}
